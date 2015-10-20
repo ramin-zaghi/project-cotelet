@@ -68,5 +68,5 @@ namespace cotelet {
 
 } // cotelet
 
-#endif
+#endif // __AOM_H__
 

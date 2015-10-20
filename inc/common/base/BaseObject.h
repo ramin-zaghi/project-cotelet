@@ -62,5 +62,5 @@ namespace cotelet {
 
 } // cotelet
 
-#endif
+#endif // __BASEOBJECT_H__
 
