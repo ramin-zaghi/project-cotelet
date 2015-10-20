@@ -25,3 +25,7 @@ requiring any components of this software to be present on the target
 machine to which the final product or the generated source code will
 be deployed.
 
+## Example of how to compile a unit test
+
+clang++ -O0 -std=c++11 -I./inc/common/ src/common/aom/AOM.cpp src/common/base/BaseObject.cpp tests/unit-tests/unit-test-aom.cpp -lm -o unit-test-aom
+

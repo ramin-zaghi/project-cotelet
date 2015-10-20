@@ -39,11 +39,21 @@
 #include <iostream>
 #include <string>
 
+#include "base/BaseObject.h"
 #include "aom/AOM.h"
 
 using namespace std;
 
 int main() {
- 
+
+  // TODO: Change the whole unit test to reflect the actual test.
+  // This is just to setup the inital unit tests.
+  cotelet::AOMInstance* aom_instance = new cotelet::AOMInstance();
+
+  // TODO: Delete this call.
+  // This is just to setup the inial unit tests.
+  aom_instance->printhi();
+
+  return 0;
 }
 

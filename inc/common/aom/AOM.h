@@ -39,19 +39,32 @@
 #ifndef __AOM_H__
 #define __AOM_H__
 
+#include "base/BaseObject.h"
+
 namespace cotelet {
 
-  class AOMType : public BaseObject {
-  }; // AOMType
+  class AOMPropertyType : public BaseObject<AOMPropertyType> {
+  }; // AOMPropertyType
 
-  class AOMProperty : public BaseObject {
+  class AOMInstanceType : public BaseObject<AOMInstanceType> {
+  }; // AOMInstanceType
+
+  class AOMProperty : public BaseObject<AOMProperty> {
   }; // AOMProperty
 
-  class AOMTypeInstance : public BaseObject {
-  }; // AOMTypeInstance
+  class AOMInstance : public BaseObject<AOMInstance> {
+    public:
+      // TODO: Delete this function.
+      // This is just to setup the initial unit tests.
+      void printhi() {
+        std::cout << "Hello unit test..." << std::endl;
+        properties.push_back(std::unique_ptr<AOMProperty>(new AOMProperty));
+      }
 
-  class AOMPropertyInstance : public BaseObject {
-  }; // AOMPropertyInstance
+    private:
+      AOMProperty::TypeUniquePointerVector properties;
+
+  }; // AOMInstance
 
 } // cotelet
 

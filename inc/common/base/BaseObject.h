@@ -39,9 +39,24 @@
 #ifndef __BASEOBJECT_H__
 #define __BASEOBJECT_H__
 
+#include <vector>
+#include <iostream>
+#include <string>
+
 namespace cotelet {
 
-  class BaseObject {
+  class Base {
+  }; // Base
+
+  template<class T>
+  class BaseObject : public Base {
+
+    public:
+      typedef T Type;
+      typedef std::vector<Type> TypeVector;
+      typedef std::vector<std::unique_ptr<Type>> TypeUniquePointerVector;
+
+    private:
 
   }; // BaseObject
 
