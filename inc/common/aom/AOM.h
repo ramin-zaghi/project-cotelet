@@ -61,7 +61,7 @@ namespace cotelet {
    *
    * TODO: Fill this detailed field.
    */
-  class AOMPropertyType : public BaseObject<AOMPropertyType> {
+  COTELET_CLASS(AOMPropertyType) {
   }; // AOMPropertyType
 
   /**
@@ -69,7 +69,7 @@ namespace cotelet {
    *
    * TODO: Fill this detailed field.
    */
-  class AOMInstanceType : public BaseObject<AOMInstanceType> {
+  COTELET_CLASS(AOMInstanceType) {
   }; // AOMInstanceType
 
   /**
@@ -77,7 +77,7 @@ namespace cotelet {
    *
    * TODO: Fill this detailed field.
    */
-  class AOMProperty : public BaseObject<AOMProperty> {
+  COTELET_CLASS(AOMProperty) {
   }; // AOMProperty
 
   /**
@@ -85,7 +85,8 @@ namespace cotelet {
    *
    * TODO: Fill this detailed field.
    */
-  class AOMInstance : public BaseObject<AOMInstance> {
+  //class AOMInstance : public BaseObject<AOMInstance> {
+  COTELET_CLASS(AOMInstance) {
     public:
       /**
         * @brief TODO: Fill this function brief field.
@@ -97,7 +98,7 @@ namespace cotelet {
       // TODO: Delete this function.
       // This is just to setup the initial unit tests.
       void printhi() {
-        std::cout << "Hello unit test..." << std::endl;
+        std::cout << "Hello unit test from: " << TypeName() << std::endl;
         properties.push_back(std::unique_ptr<AOMProperty>(new AOMProperty));
       }
 

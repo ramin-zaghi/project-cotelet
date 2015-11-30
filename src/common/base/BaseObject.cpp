@@ -49,3 +49,7 @@
 
 #include "base/BaseObject.h"
 
+namespace cotelet {
+
+} // cotelet
+

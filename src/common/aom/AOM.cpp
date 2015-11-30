@@ -49,3 +49,12 @@
 
 #include "aom/AOM.h"
 
+namespace cotelet {
+
+  COTELET_CLASS_IMPLEMENT(AOMPropertyType);
+  COTELET_CLASS_IMPLEMENT(AOMInstanceType);
+  COTELET_CLASS_IMPLEMENT(AOMProperty);
+  COTELET_CLASS_IMPLEMENT(AOMInstance);
+
+} // cotelet
+
