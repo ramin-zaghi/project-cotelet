@@ -3,7 +3,7 @@
  * All rights reserved.                                                       *
  *                                                                            *
  * Developed by: Ramin Zaghi                                                  *
- * Mosaic3DX.com                                                              *
+ * Mosaic3DX Consulting                                                       *
  * http://mosaic3dx.com                                                       *
  *                                                                            *
  * Permission is hereby granted, free of charge, to any person obtaining a    *
@@ -43,8 +43,8 @@
  * @author Ramin Zaghi
  * @brief Header file for implementing an Adaptive Object Model (AOM) pattern.
  *
- * AOM's are used for defining simple or comples types at runtime as well as
- * instanciating them at runtime. This behaviour is useful in mnay scenarios
+ * AOM's are used for defining simple or complex types at runtime as well as
+ * instanciating them at runtime. This behaviour is useful in many scenarios
  * given the scope of what Cotelet is targeting.
  * @see http://www.adaptiveobjectmodel.com/WICSA3/ArchitectureOfAOMsWICSA3.pdf
  */

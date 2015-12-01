@@ -3,7 +3,7 @@
  * All rights reserved.                                                       *
  *                                                                            *
  * Developed by: Ramin Zaghi                                                  *
- * Mosaic3DX.com                                                              *
+ * Mosaic3DX Consulting                                                       *
  * http://mosaic3dx.com                                                       *
  *                                                                            *
  * Permission is hereby granted, free of charge, to any person obtaining a    *
@@ -64,13 +64,13 @@
   class _BaseClass##classname : virtual public BaseObject<T> {                 \
     public:                                                                    \
       /** \brief Return classname in null-terminated character string. */      \
-      static char const * const TypeName() noexcept {                          \
+      static constexpr char const * const TypeName() noexcept {                \
         return #classname;                                                     \
       }                                                                        \
                                                                                \
     private:                                                                   \
       /** \brief Register this class in the class registery. */                \
-      static _ClassRegistery _registery;                                       \
+      static const _ClassRegistery _registery;                                 \
                                                                                \
   };                                                                           \
                                                                                \
@@ -81,7 +81,7 @@
 #define COTELET_CLASS_IMPLEMENT(classname)                                     \
   /** \brief Force the compiler to instantiate the static template member. */  \
   template<>                                                                   \
-  _ClassRegistery _BaseClass##classname<classname>::_registery {               \
+  const _ClassRegistery _BaseClass##classname<classname>::_registery {         \
     #classname,                                                                \
     &_BaseClass##classname<classname>::createUninitialized };
 
