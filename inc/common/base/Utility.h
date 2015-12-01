@@ -55,7 +55,7 @@
 #include <string>
 #include <map>
 #include <memory>
-
+#include <cassert>
 
 #define COTELET_CLASS(classname)                                               \
   class classname;                                                             \
@@ -86,12 +86,13 @@
     &_BaseClass##classname<classname>::createUninitialized };
 
 
+// TODO: Add debug logging mechanisms to all of the code base.
 #define COTELET_PROPERTY_STATIC_READONLY(Type, name)                           \
   /** \brief Avoid static member initialization fiasco and destroy it too. */  \
   static Type& get##name() {                                                   \
-    static Type* static_object = new Type();                                   \
-    static std::unique_ptr<Type> destroy_object(static_object);                \
-    return *static_object; };
+    static std::unique_ptr<Type> destroy_object(new Type());                   \
+    assert(destroy_object && #Type && #name);                                  \
+    return *destroy_object; };
 
 
 namespace cotelet {
