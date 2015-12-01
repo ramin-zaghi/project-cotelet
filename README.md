@@ -31,3 +31,5 @@ clang++-3.5 -O3 -std=c++11 -I./inc/common/ src/common/base/Utility.cpp src/commo
 
 _Note: Use -DNDEBUG on the above command line to disable debug information (including any assertions)_
 
+_Note: Use -DCOTELET_DEBUG_LEVEL=5 to define a new debug level. See inc/common/base/Utility.h for the possible values._
+

@@ -74,7 +74,7 @@ namespace cotelet {
    * "managed" and "RTTI-enabled" classes in the Cotelet universe.
    */
   template<class T>
-  class BaseObject : public Base {
+  class BaseObject : virtual public Base {
     public:
       /** \brief TODO: Fill in this briefe field. */
       typedef T Type;

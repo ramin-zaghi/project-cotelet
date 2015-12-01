@@ -57,6 +57,38 @@
 #include <memory>
 #include <cassert>
 
+
+// TODO: Add proper logging mechanisms.
+
+/**
+ * @brief COTELET_DEBUG_LEVEL defines how much debug code is built.
+ *
+ * COTELET_DEBUG_LEVEL values are integers. The higher the value
+ * the more the amount of debug code that is enabled in the code.
+ * Please read different COTELET_DEBUG_LEVEL* macros to see which
+ * debug level enables which debug information/features.
+ */
+
+#if !defined(COTELET_DEBUG_LEVEL)
+  #define COTELET_DEBUG_LEVEL 0
+#endif
+
+#define COTELET_DEBUG_LEVEL_MEMORY 5
+
+#if COTELET_DEBUG_LEVEL >= COTELET_DEBUG_LEVEL_MEMORY
+  #define COTELET_ASSERT_MEMORY(statement) assert(statement)
+#else
+  #define COTELET_ASSERT_MEMORY(statement)
+#endif
+
+
+/**
+ * @brief Other preprocessor directives/macros to aid us in the code.
+ *
+ * Below is a few other macros that we need to avoid duplicate code.
+ *
+ */
+
 #define COTELET_CLASS(classname)                                               \
   class classname;                                                             \
                                                                                \
@@ -91,7 +123,7 @@
   /** \brief Avoid static member initialization fiasco and destroy it too. */  \
   static Type& get##name() {                                                   \
     static std::unique_ptr<Type> destroy_object(new Type());                   \
-    assert(destroy_object && #Type && #name);                                  \
+    COTELET_ASSERT_MEMORY(destroy_object && #Type && #name);                   \
     return *destroy_object; };
 
 
